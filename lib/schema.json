@@ -1,0 +1,1052 @@
+{
+    "ASSINANTE": {
+        "fields": {
+            "id": {
+                "type": "string",
+                "required": true
+            },
+            "nome": {
+                "type": "string",
+                "required": true
+            },
+            "fantasia": {
+                "type": "string",
+                "required": true
+            },
+            "ramo": {
+                "type": "string",
+                "required": true
+            },
+            "uf": {
+                "type": "string",
+                "required": true
+            },
+            "cidade": {
+                "type": "string",
+                "required": true
+            },
+            "revendaId": {
+                "type": "string"
+            },
+            "bairro": {
+                "type": "string",
+                "required": true
+            },
+            "softwaresAtivos": {
+                "type": "list[string]",
+                "allowedValues": [
+                    "MILENIO",
+                    "SYSPDV",
+                    "VAREJOFACIL",
+                    "SYSPDVWEB",
+                    "EASYASSIST",
+                    "SYSPDV_APP",
+                    "COLETOR"
+                ],
+                "required": true
+            },
+            "softwaresEmContratosDeManutencao": {
+                "type": "list[string]",
+                "allowedValues": [
+                    "MILENIO",
+                    "SYSPDV",
+                    "VAREJOFACIL",
+                    "SYSPDVWEB",
+                    "EASYASSIST",
+                    "SYSPDV_APP",
+                    "COLETOR"
+                ],
+                "required": true
+            },
+            "series": {
+                "type": "list[string]"
+            },
+            "ativo": {
+                "type": "boolean",
+                "required": true
+            }
+        }
+    },
+    "REVENDA": {
+        "fields": {
+            "id": {
+                "type": "string",
+                "required": true
+            },
+            "nome": {
+                "type": "string",
+                "required": true
+            },
+            "fantasia": {
+                "type": "string",
+                "required": true
+            },
+            "ramo": {
+                "type": "string",
+                "required": true
+            },
+            "uf": {
+                "type": "string",
+                "required": true
+            },
+            "cidade": {
+                "type": "string",
+                "required": true
+            },
+            "bairro": {
+                "type": "string",
+                "required": true
+            }
+        }
+    },
+    "SECAO": {
+        "fields": {
+            "id": {
+                "type": "string",
+                "required": true
+            },
+            "codigo": {
+                "type": "string",
+                "required": true
+            },
+            "descricao": {
+                "type": "string",
+                "required": true
+            }
+        }
+    },
+    "GRUPO": {
+        "fields": {
+            "id": {
+                "type": "string",
+                "required": true
+            },
+            "codigo": {
+                "type": "string",
+                "required": true
+            },
+            "descricao": {
+                "type": "string",
+                "required": true
+            },
+            "secaoId": {
+                "type": "string",
+                "required": true
+            }
+        }
+    },
+    "SUBGRUPO": {
+        "fields": {
+            "id": {
+                "type": "string",
+                "required": true
+            },
+            "codigo": {
+                "type": "string",
+                "required": true
+            },
+            "descricao": {
+                "type": "string",
+                "required": true
+            },
+            "secaoId": {
+                "type": "string",
+                "required": true
+            },
+            "grupoId": {
+                "type": "string",
+                "required": true
+            }
+        }
+    },
+    "HOLDING": {
+        "fields": {
+            "id": {
+                "type": "string",
+                "required": true
+            },
+            "descricao": {
+                "type": "string",
+                "required": true
+            }
+        }
+    },
+    "LOJA": {
+        "fields": {
+            "ativa": {
+                "type": "boolean",
+                "required": true
+            },
+            "id": {
+                "type": "string",
+                "required": true
+            },
+            "descricao": {
+                "type": "string",
+                "required": true
+            },
+            "numeroDocumento": {
+                "type": "string",
+                "required": true
+            },
+            "matriz": {
+                "type": "boolean",
+                "required": true
+            },
+            "holdingId": {
+                "type": "string",
+                "required": true
+            },
+            "ramo": {
+                "type": "string",
+                "required": true
+            },
+            "logradouro": {
+                "type": "string"
+            },
+            "numero": {
+                "type": "string"
+            },
+            "uf": {
+                "type": "string",
+                "required": true
+            },
+            "cidade": {
+                "type": "string",
+                "required": true
+            },
+            "bairro": {
+                "type": "string",
+                "required": true
+            },
+            "cep": {
+                "type": "string"
+            },
+            "distrito": {
+                "type": "string"
+            },
+            "complemento": {
+                "type": "string"
+            },
+            "telefone": {
+                "type": "string"
+            },
+            "qtdCheckouts": {
+                "type": "number"
+            },
+            "areaM2": {
+                "type": "number"
+            },
+            "qtdFuncionarios": {
+                "type": "number"
+            }
+        }
+    },
+    "META": {
+        "fields": {
+            "id": {
+                "type": "string",
+                "required": true
+            },
+            "mes": {
+                "type": "number",
+                "required": true
+            },
+            "ano": {
+                "type": "number",
+                "required": true
+            },
+            "lojaId": {
+                "type": "string",
+                "required": true
+            },
+            "secaoId": {
+                "type": "string",
+                "required": true
+            },
+            "valor": {
+                "type": "number",
+                "required": true
+            }
+        }
+    },
+    "FORMA_PAGAMENTO": {
+        "fields": {
+            "id": {
+                "type": "string",
+                "required": true
+            },
+            "descricao": {
+                "type": "string",
+                "required": true
+            }
+        }
+    },
+    "FUNCIONARIO": {
+        "fields": {
+            "dataNascimento": {
+                "type": "date",
+                "required": false
+            },
+            "id": {
+                "type": "string",
+                "required": true
+            },
+            "login": {
+                "type": "string",
+                "required": false
+            },
+            "nome": {
+                "type": "string",
+                "required": true
+            },
+            "numeroDocumento": {
+                "type": "string"
+            },
+            "ativo": {
+                "type": "boolean",
+                "required": true
+            },
+            "senha": {
+                "type": "string",
+                "required": false
+            },
+            "lojaIds": {
+                "type": "list[string]",
+                "required": false
+            }
+        }
+    },
+    "ACESSO": {
+        "fields": {
+            "id": {
+                "type": "string",
+                "required": true
+            },
+            "funcionarioIds": {
+                "type": "list[string]",
+                "required": true
+            }
+        }
+    },
+    "CLIENTE": {
+        "fields": {
+            "id": {
+                "type": "string",
+                "required": true
+            },
+            "nome": {
+                "type": "string",
+                "required": true
+            },
+            "numeroDocumento": {
+                "type": "string",
+                "required": true
+            },
+            "ramo": {
+                "type": "string",
+                "required": true
+            },
+            "uf": {
+                "type": "string",
+                "required": true
+            },
+            "cidade": {
+                "type": "string",
+                "required": true
+            },
+            "bairro": {
+                "type": "string",
+                "required": true
+            }
+        }
+    },
+    "FORNECEDOR": {
+        "fields": {
+            "id": {
+                "type": "string",
+                "required": true
+            },
+            "nome": {
+                "type": "string",
+                "required": true
+            },
+            "numeroDocumento": {
+                "type": "string",
+                "required": true
+            },
+            "ramo": {
+                "type": "string",
+                "required": true
+            },
+            "uf": {
+                "type": "string",
+                "required": true
+            },
+            "cidade": {
+                "type": "string",
+                "required": true
+            },
+            "bairro": {
+                "type": "string",
+                "required": true
+            }
+        }
+    },
+    "PRODUTO": {
+        "fields": {
+            "composicao": {
+                "type": "object",
+                "fields": {
+                    "itens": {
+                        "type": "list[object]",
+                        "fields": {
+                            "produtoId": {
+                                "type": "string",
+                                "required": true
+                            },
+                            "quantidade": {
+                                "type": "number",
+                                "required": true
+                            }
+                        }
+                    },
+                    "quantidade": {
+                        "type": "number",
+                        "required": true
+                    }
+                }
+            },
+            "tipoComposicao": {
+                "type": "string"
+            },
+            "descricao": {
+                "type": "string",
+                "required": true
+            },
+            "dataInclusao": {
+                "type": "date"
+            },
+            "finalidade": {
+                "type": "string"
+            },
+            "ativo": {
+                "type": "boolean"
+            },
+            "grupoId": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string",
+                "required": true
+            },
+            "pesoVariavel": {
+                "type": "boolean"
+            },
+            "quantidadeItensEmbalagem": {
+                "type": "number"
+            },
+            "secaoId": {
+                "type": "string",
+                "required": true
+            },
+            "subgrupoId": {
+                "type": "string"
+            },
+            "fornecedores": {
+                "type": "list[object]",
+                "fields": {
+                    "id": {
+                        "type": "string",
+                        "required": true
+                    },
+                    "principal": {
+                        "type": "boolean",
+                        "required": true
+                    }
+                }
+            }
+        }
+    },
+    "EAN": {
+        "fields": {
+            "id": {
+                "type": "string",
+                "required": true
+            },
+            "produtoId": {
+                "type": "string",
+                "required": true
+            },
+            "tributado": {
+                "type": "boolean"
+            }
+        }
+    },
+    "TROCA_FORMA_PAGAMENTO": {
+        "fields": {
+            "autorizadorId": {
+                "type": "string"
+            },
+            "data": {
+                "type": "date",
+                "required": true
+            },
+            "formaPagamentoDestinoId": {
+                "type": "string",
+                "required": true
+            },
+            "formaPagamentoOrigemId": {
+                "type": "string",
+                "required": true
+            },
+            "id": {
+                "type": "string",
+                "required": true
+            },
+            "lojaId": {
+                "type": "string",
+                "required": true
+            },
+            "vendaId": {
+                "type": "string"
+            },
+            "operadorId": {
+                "type": "string"
+            },
+            "sequencialPagamento": {
+                "type": "string",
+                "required": true
+            },
+            "valor": {
+                "type": "number",
+                "required": true
+            },
+            "valorContraValeOuTroco": {
+                "type": "number"
+            }
+        }
+    },
+    "TROCA_DEVOLUCAO": {
+        "fields": {
+            "autorizadorId": {
+                "type": "string"
+            },
+            "data": {
+                "type": "date",
+                "required": true
+            },
+            "vendaId": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string",
+                "required": true
+            },
+            "itens": {
+                "type": "list[object]",
+                "fields": {
+                    "desconto": {
+                        "type": "number"
+                    },
+                    "produtoId": {
+                        "type": "string",
+                        "required": true
+                    },
+                    "quantidade": {
+                        "type": "number",
+                        "required": true
+                    },
+                    "valorTotal": {
+                        "type": "number",
+                        "required": true
+                    },
+                    "valorUnitario": {
+                        "type": "number",
+                        "required": true
+                    },
+                    "vendedorId": {
+                        "type": "string"
+                    }
+                },
+                "required": true
+            },
+            "lojaId": {
+                "type": "string",
+                "required": true
+            },
+            "numeroCaixa": {
+                "type": "string"
+            },
+            "operadorId": {
+                "type": "string"
+            },
+            "sequencial": {
+                "type": "string"
+            },
+            "valor": {
+                "type": "number",
+                "required": true
+            },
+            "vendedorId": {
+                "type": "string"
+            }
+        }
+    },
+    "EVENTO_CAIXA": {
+        "fields": {
+            "id": {
+                "type": "string",
+                "required": true
+            },
+            "lojaId": {
+                "type": "string",
+                "required": true
+            },
+            "numeroCaixa": {
+                "type": "string",
+                "required": true
+            },
+            "funcionarioId": {
+                "type": "string"
+            },
+            "dataHora": {
+                "type": "date",
+                "required": true
+            },
+            "tipo": {
+                "type": "string",
+                "required": true,
+                "allowedValues": [
+                    "ABERTURA",
+                    "FECHAMENTO",
+                    "ENTRADA_OPERADOR",
+                    "SAIDA_OPERADOR"
+                ]
+            },
+            "valoresDeclarados": {
+                "type": "list[object]",
+                "fields": {
+                    "formaPagamentoId": {
+                        "type": "string",
+                        "required": true
+                    },
+                    "valor": {
+                        "type": "number",
+                        "required": true
+                    }
+                }
+            }
+        }
+    },
+    "VENDA": {
+        "fields": {
+            "id": {
+                "type": "string",
+                "required": true
+            },
+            "lojaId": {
+                "type": "string",
+                "required": true
+            },
+            "clienteId": {
+                "type": "string"
+            },
+            "funcionarioId": {
+                "type": "string"
+            },
+            "data": {
+                "type": "date",
+                "required": true
+            },
+            "dataHoraInicio": {
+                "type": "date"
+            },
+            "dataHoraFim": {
+                "type": "date"
+            },
+            "dataHoraVenda": {
+                "type": "date",
+                "required": true
+            },
+            "desconto": {
+                "type": "number"
+            },
+            "efetiva": {
+                "type": "boolean",
+                "required": true
+            },
+            "quantidadeItens": {
+                "type": "number",
+                "required": true
+            },
+            "quantidadeItensCancelados": {
+                "type": "number"
+            },
+            "sequencial": {
+                "type": "string",
+                "required": true
+            },
+            "servico": {
+                "type": "number"
+            },
+            "tipoDesconto": {
+                "type": "string"
+            },
+            "tipoPreco": {
+                "type": "string",
+                "required": true
+            },
+            "valor": {
+                "type": "number",
+                "required": true
+            },
+            "valorItensCancelados": {
+                "type": "number"
+            },
+            "acrescimo": {
+                "type": "number"
+            },
+            "numeroCaixa": {
+                "type": "string"
+            },
+            "itens": {
+                "type": "list[object]",
+                "fields": {
+                    "acrescimo": {
+                        "type": "number"
+                    },
+                    "desconto": {
+                        "type": "number"
+                    },
+                    "efetivo": {
+                        "type": "boolean",
+                        "required": true
+                    },
+                    "funcionarioId": {
+                        "type": "string"
+                    },
+                    "preco": {
+                        "type": "number",
+                        "required": true
+                    },
+                    "produtoId": {
+                        "type": "string",
+                        "required": true
+                    },
+                    "codigoRegistrado": {
+                        "type": "string"
+                    },
+                    "promocao": {
+                        "type": "boolean"
+                    },
+                    "quantidade": {
+                        "type": "number",
+                        "required": true
+                    },
+                    "servico": {
+                        "type": "number"
+                    },
+                    "valorTotal": {
+                        "type": "number",
+                        "required": true
+                    },
+                    "valorUnitario": {
+                        "type": "number",
+                        "required": true
+                    },
+                    "tipoPreco": {
+                        "type": "string",
+                        "required": true
+                    },
+                    "custo": {
+                        "type": "number"
+                    },
+                    "markup": {
+                        "type": "number"
+                    },
+                    "lucro": {
+                        "type": "number"
+                    }
+                },
+                "required": true
+            },
+            "pagamentos": {
+                "type": "list[object]",
+                "fields": {
+                    "formaPagamentoId": {
+                        "type": "string",
+                        "required": true
+                    },
+                    "sequencial": {
+                        "type": "string",
+                        "required": true
+                    },
+                    "valor": {
+                        "type": "number",
+                        "required": true
+                    }
+                },
+                "required": true
+            }
+        }
+    },
+    "COMPRA": {
+        "fields": {
+            "id": {
+                "type": "string",
+                "required": true
+            },
+            "lojaId": {
+                "type": "string",
+                "required": true
+            },
+            "fornecedorId": {
+                "type": "string"
+            },
+            "funcionarioId": {
+                "type": "string"
+            },
+            "dataEntrada": {
+                "type": "date",
+                "required": true
+            },
+            "dataEmissao": {
+                "type": "date",
+                "required": true
+            },
+            "dataHoraCompra": {
+                "type": "date",
+                "required": true
+            },
+            "desconto": {
+                "type": "number"
+            },
+            "efetiva": {
+                "type": "boolean",
+                "required": true
+            },
+            "quantidadeItens": {
+                "type": "number",
+                "required": true
+            },
+            "tipoDesconto": {
+                "type": "string"
+            },
+            "valor": {
+                "type": "number",
+                "required": true
+            },
+            "acrescimo": {
+                "type": "number"
+            },
+            "itens": {
+                "type": "list[object]",
+                "fields": {
+                    "acrescimo": {
+                        "type": "number"
+                    },
+                    "desconto": {
+                        "type": "number"
+                    },
+                    "produtoId": {
+                        "type": "string",
+                        "required": true
+                    },
+                    "quantidade": {
+                        "type": "number",
+                        "required": true
+                    },
+                    "valorTotal": {
+                        "type": "number",
+                        "required": true
+                    },
+                    "valorUnitario": {
+                        "type": "number",
+                        "required": true
+                    }
+                },
+                "required": true
+            }
+        }
+    },
+    "LOCAL_ESTOQUE": {
+        "fields": {
+            "id": {
+                "type": "string",
+                "required": true
+            },
+            "lojaId": {
+                "type": "string",
+                "required": true
+            },
+            "descricao": {
+                "type": "string",
+                "required": true
+            },
+            "disponivelParaVenda": {
+                "type": "boolean",
+                "required": true
+            }
+        }
+    },
+    "ESTOQUE_MOVIMENTACAO": {
+        "fields": {
+            "id": {
+                "type": "string",
+                "required": true
+            },
+            "localEstoqueId": {
+                "type": "string",
+                "required": true
+            },
+            "dataHora": {
+                "type": "date",
+                "required": true
+            },
+            "produtoId": {
+                "type": "string",
+                "required": true
+            },
+            "quantidade": {
+                "type": "number",
+                "required": true
+            },
+            "custo": {
+                "type": "number",
+                "required": true
+            },
+            "preco": {
+                "type": "number",
+                "required": true
+            },
+            "markup": {
+                "type": "number"
+            }
+        }
+    },
+    "TITULO_PAGAR": {
+        "fields": {
+            "id": {
+                "type": "string",
+                "required": true
+            },
+            "lojaId": {
+                "type": "string",
+                "required": true
+            },
+            "fornecedorId": {
+                "type": "string",
+                "required": true
+            },
+            "documento": {
+                "type": "string",
+                "required": true
+            },
+            "valorNominal": {
+                "type": "number",
+                "required": true
+            },
+            "valorJuros": {
+                "type": "number",
+                "required": true
+            },
+            "valorMulta": {
+                "type": "number",
+                "required": true
+            },
+            "valorDevido": {
+                "type": "number",
+                "required": true
+            },
+            "valorPago": {
+                "type": "number",
+                "required": true
+            },
+            "dataEmissao": {
+                "type": "date",
+                "required": true
+            },
+            "dataVencimento": {
+                "type": "date",
+                "required": true
+            },
+            "pagamentos": {
+                "type": "list[object]",
+                "fields": {
+                    "dataHora": {
+                        "type": "date",
+                        "required": true
+                    },
+                    "valor": {
+                        "type": "number",
+                        "required": true
+                    }
+                },
+                "required": true
+            }
+        }
+    },
+    "TITULO_RECEBER": {
+        "fields": {
+            "id": {
+                "type": "string",
+                "required": true
+            },
+            "lojaId": {
+                "type": "string",
+                "required": true
+            },
+            "clienteId": {
+                "type": "string",
+                "required": true
+            },
+            "documento": {
+                "type": "string",
+                "required": true
+            },
+            "valorNominal": {
+                "type": "number",
+                "required": true
+            },
+            "valorJuros": {
+                "type": "number",
+                "required": true
+            },
+            "valorMulta": {
+                "type": "number",
+                "required": true
+            },
+            "valorDevido": {
+                "type": "number",
+                "required": true
+            },
+            "valorPago": {
+                "type": "number",
+                "required": true
+            },
+            "dataEmissao": {
+                "type": "date",
+                "required": true
+            },
+            "dataVencimento": {
+                "type": "date",
+                "required": true
+            },
+            "pagamentos": {
+                "type": "list[object]",
+                "fields": {
+                    "dataHora": {
+                        "type": "date",
+                        "required": true
+                    },
+                    "valor": {
+                        "type": "number",
+                        "required": true
+                    }
+                },
+                "required": true
+            }
+        }
+    }
+}
