@@ -1,0 +1,12 @@
+{
+	"id": "1234",
+	"ativa": true,
+	"descricao": "teste",
+	"numeroDocumento": "1234",
+	"matriz": false,
+	"holdingId": "1234",
+	"ramo": "teste",
+	"uf": "teste",
+	"cidade": "teste",
+	"bairro": "teste"
+}

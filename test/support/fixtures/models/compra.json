@@ -1,0 +1,18 @@
+{
+	"id": "1234",
+	"lojaId": "2345",
+	"dataEntrada": "2019-05-07T21:35:40.706Z",
+	"dataEmissao": "2019-05-07T21:35:40.706Z",
+	"dataHoraCompra": "2019-05-07T21:35:40.706Z",
+	"efetiva": true,
+	"quantidadeItens": 1.0,
+	"valor": 1.0,
+	"itens": [
+		{
+			"produtoId": "1",
+			"quantidade": 1,
+			"valorTotal": 10,
+			"valorUnitario": 10
+		}
+	]
+}

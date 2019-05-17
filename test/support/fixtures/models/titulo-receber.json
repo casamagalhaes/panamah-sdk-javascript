@@ -1,0 +1,17 @@
+{
+	"id": "1234",
+	"lojaId": "1234",
+	"clienteId": "1234",
+	"documento": "1234",
+	"valorNominal": 100,
+	"valorJuros": 100,
+	"valorMulta": 100,
+	"valorDevido": 100,
+	"valorPago": 100,
+	"dataEmissao": "2019-05-07T21:35:40.706Z",
+	"dataVencimento": "2019-05-07T21:35:40.706Z",
+	"pagamentos": [{
+		"dataHora": "2019-05-07T21:35:40.706Z",
+		"valor": 10
+	}]
+}

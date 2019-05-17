@@ -12,7 +12,11 @@ class Stream extends EventEmitter {
         processor.on('before_delete', model => this.emit('before_delete', model));
         processor.on('error', error => this.emit('error', error));
         processor.start({
-            credentials: { authorizationToken, secret, assinanteId }
+            credentials: {
+                authorizationToken: process.env.PANAMAH_AUTHORIZATION_TOKEN || authorizationToken,
+                secret: process.env.PANAMAH_SECRET || secret,
+                assinanteId: process.env.PANAMAH_ASSINANTE_ID || assinanteId
+            }
         });
     }
 

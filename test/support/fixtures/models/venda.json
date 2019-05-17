@@ -1,0 +1,29 @@
+{
+	"id": "1234",
+	"lojaId": "111",
+	"data": "2019-05-07T21:35:40.706Z",
+	"dataHoraVenda": "2019-05-07T21:35:40.706Z",
+	"efetiva": true,
+	"quantidadeItens": 1,
+	"sequencial": "1234",
+	"tipoPreco": "1",
+	"valor": 1000,
+	"itens": [
+		{
+			"produtoId": "1",
+			"quantidade": 1,
+			"valorTotal": 10,
+			"valorUnitario": 10,
+			"tipoPreco": "1",
+			"efetivo": true,
+			"preco": 10
+		}
+	],
+	"pagamentos": [
+		{
+			"formaPagamentoId": "1234",
+			"sequencial": "1",
+			"valor": 10
+		}
+	]
+}
