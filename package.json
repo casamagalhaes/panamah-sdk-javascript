@@ -7,7 +7,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "node_modules/.bin/jasmine"
+    "test": "PANAMAH_API_URL=\"https://127.0.0.1:7443\" PANAMAH_AUTHORIZATION_TOKEN=\"0\" PANAMAH_SECRET=\"0\" PANAMAH_ASSINANTE_ID=\"0\" npx mocha --timeout=6000000 --exit"
   },
   "keywords": [],
   "author": "",
@@ -15,7 +15,6 @@
   "dependencies": {
     "axios": "^0.18.0",
     "lodash.camelcase": "^4.3.0",
-    "lodash.flatten": "^4.4.0",
     "moment": "^2.24.0"
   },
   "devDependencies": {

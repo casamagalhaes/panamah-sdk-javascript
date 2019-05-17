@@ -1,4 +1,5 @@
 module.exports = {
-    Models: require('./lib/models'),
-    Stream: require('./stream')
+    PanamahModels: require('./lib/models'),
+    PanamahStream: require('./stream'),
+    PanamahAdmin: require('./admin')
 }
