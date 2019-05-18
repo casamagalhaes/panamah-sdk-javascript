@@ -1,5 +1,6 @@
 const { ValidationError, InitError } = require('./lib/exceptions');
 const processor = require('./lib/processor');
+const NFe = require('./lib/nfe');
 const EventEmitter = require('events');
 
 class PanamahStream extends EventEmitter {
@@ -36,28 +37,42 @@ class PanamahStream extends EventEmitter {
         return !['ASSINANTE'].includes(model.modelName);
     }
 
-    save(model) {
-        if (this.validModel(model)) {
-            let keepExecuting = true;
-            let preventSave = () => { keepExecuting = false };
-            this.emit('before_save', model, preventSave);
-            if (keepExecuting)
-                processor.save(model);
-        }
-        else
-            throw new ValidationError(`Impossível salvar modelos do tipo ${model.className} no stream.`);
+    save(data) {
+        let models = Array.isArray(data) ? data : [data];
+        models.forEach(model => {
+            if (this.validModel(model)) {
+                let keepExecuting = true;
+                let preventSave = () => { keepExecuting = false };
+                this.emit('before_save', model, preventSave);
+                if (keepExecuting)
+                    processor.save(model);
+            }
+            else
+                throw new ValidationError(`Impossível salvar modelos do tipo ${model.className} no stream.`);
+        });
     }
 
-    delete(model) {
-        if (this.validModel(model)) {
-            let keepExecuting = true;
-            let preventDelete = () => { keepExecuting = false };
-            this.emit('before_delete', model, preventDelete);
-            if (keepExecuting)
-                processor.delete(model);
-        }
-        else
-            throw new ValidationError(`Impossível deletar modelos do tipo ${model.className} no stream.`);
+    delete(data) {
+        let models = Array.isArray(data) ? data : [data];
+        models.forEach(model => {
+            if (this.validModel(model)) {
+                let keepExecuting = true;
+                let preventDelete = () => { keepExecuting = false };
+                this.emit('before_delete', model, preventDelete);
+                if (keepExecuting)
+                    processor.delete(model);
+            }
+            else
+                throw new ValidationError(`Impossível deletar modelos do tipo ${model.className} no stream.`);
+        });
+    }
+
+    async readNFe(filename) {
+        return await NFe.readModelsFromFile(filename);        
+    }
+
+    async readNFeDirectory(dirname) {
+        return await NFe.readModelsFromDirectory(dirname);
     }
 
     async flush() {
