@@ -15,7 +15,8 @@
   "dependencies": {
     "axios": "^0.18.0",
     "lodash.camelcase": "^4.3.0",
-    "moment": "^2.24.0"
+    "moment": "^2.24.0",
+    "xml2js": "^0.4.19"
   },
   "devDependencies": {
     "body-parser": "^1.19.0",

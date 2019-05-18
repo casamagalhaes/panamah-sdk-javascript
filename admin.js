@@ -1,7 +1,7 @@
 const AdminClient = require('./lib/admin-client');
 const { InitError, AdminError, NotFoundError, ConflictError } = require('./lib/exceptions');
 
-class Admin {
+class PanamahAdmin {
     init(authorizationToken) {
         const credentials = {
             authorizationToken: process.env.PANAMAH_AUTHORIZATION_TOKEN || authorizationToken
@@ -42,6 +42,6 @@ class Admin {
     }
 }
 
-const admin = new Admin();
+const admin = new PanamahAdmin();
 
 module.exports = admin;

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nfeProc versao="4.00"
+	xmlns="http://www.portalfiscal.inf.br/nfe">
+	<NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+		<infNFe versao="4.00"
+			Id="NFe13190507128945000132655030000000301000000051">
+			<ide>
+				<cUF>13</cUF>
+				<cNF>00000005</cNF>
+				<natOp>VENDA DE MERCADORIA ADQUIRIDA OU RECEBIDA DE TERCEIROS
+				</natOp>
+				<mod>65</mod>
+				<serie>503</serie>
+				<nNF>30</nNF>
+				<dhEmi>2019-05-03T18:46:21-03:00</dhEmi>
+				<tpNF>1</tpNF>
+				<idDest>1</idDest>
+				<cMunFG>1302603</cMunFG>
+				<tpImp>5</tpImp>
+				<tpEmis>1</tpEmis>
+				<cDV>1</cDV>
+				<tpAmb>2</tpAmb>
+				<finNFe>1</finNFe>
+				<indFinal>1</indFinal>
+				<indPres>1</indPres>
+				<procEmi>0</procEmi>
+				<verProc>1</verProc>
+			</ide>
+			<emit>
+				<CNPJ>07128945000132</CNPJ>
+				<xNome>Casa Magalhaes Automacao Ltda.</xNome>
+				<enderEmit>
+					<xLgr>Souza Campos</xLgr>
+					<nro>800</nro>
+					<xCpl>BLOCO 1 SALA 01</xCpl>
+					<xBairro>Flores</xBairro>
+					<cMun>1302603</cMun>
+					<xMun>Manaus</xMun>
+					<UF>AM</UF>
+					<CEP>69028302</CEP>
+				</enderEmit>
+				<IE>068464916</IE>
+				<IM>72634</IM>
+				<CRT>1</CRT>
+			</emit>
+			<det nItem="1">
+				<prod>
+					<cProd>00000075</cProd>
+					<cEAN>00854011370054</cEAN>
+					<xProd>NOTA FISCAL EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR
+						FISCAL</xProd>
+					<NCM>90308410</NCM>
+					<CFOP>5102</CFOP>
+					<uCom>unid</uCom>
+					<qCom>1.0000</qCom>
+					<vUnCom>12.00</vUnCom>
+					<vProd>12.00</vProd>
+					<cEANTrib>00854011370054</cEANTrib>
+					<uTrib>unid</uTrib>
+					<qTrib>1.0000</qTrib>
+					<vUnTrib>12.00</vUnTrib>
+					<vDesc>0.20</vDesc>
+					<indTot>1</indTot>
+				</prod>
+				<imposto>
+					<vTotTrib>0.00</vTotTrib>
+					<ICMS>
+						<ICMSSN102>
+							<orig>0</orig>
+							<CSOSN>102</CSOSN>
+						</ICMSSN102>
+					</ICMS>
+				</imposto>
+			</det>
+			<det nItem="2">
+				<prod>
+					<cProd>00000005</cProd>
+					<cEAN>SEM GTIN</cEAN>
+					<xProd>Celular Moto G 6</xProd>
+					<NCM>90308410</NCM>
+					<CFOP>5102</CFOP>
+					<uCom>unid</uCom>
+					<qCom>1.0000</qCom>
+					<vUnCom>580.00</vUnCom>
+					<vProd>580.00</vProd>
+					<cEANTrib>SEM GTIN</cEANTrib>
+					<uTrib>unid</uTrib>
+					<qTrib>1.0000</qTrib>
+					<vUnTrib>580.00</vUnTrib>
+					<vDesc>9.80</vDesc>
+					<indTot>1</indTot>
+				</prod>
+				<imposto>
+					<vTotTrib>0.00</vTotTrib>
+					<ICMS>
+						<ICMSSN102>
+							<orig>5</orig>
+							<CSOSN>102</CSOSN>
+						</ICMSSN102>
+					</ICMS>
+				</imposto>
+			</det>
+			<total>
+				<ICMSTot>
+					<vBC>0</vBC>
+					<vICMS>0</vICMS>
+					<vICMSDeson>0</vICMSDeson>
+					<vFCP>0</vFCP>
+					<vBCST>0</vBCST>
+					<vST>0</vST>
+					<vFCPST>0</vFCPST>
+					<vFCPSTRet>0</vFCPSTRet>
+					<vProd>592.00</vProd>
+					<vFrete>0</vFrete>
+					<vSeg>0</vSeg>
+					<vDesc>10.00</vDesc>
+					<vII>0</vII>
+					<vIPI>0</vIPI>
+					<vIPIDevol>0</vIPIDevol>
+					<vPIS>0</vPIS>
+					<vCOFINS>0</vCOFINS>
+					<vOutro>0.00</vOutro>
+					<vNF>582.00</vNF>
+				</ICMSTot>
+			</total>
+			<transp>
+				<modFrete>9</modFrete>
+			</transp>
+			<pag>
+				<detPag>
+					<tPag>01</tPag>
+					<vPag>582.00</vPag>
+				</detPag>
+				<vTroco>0.00</vTroco>
+			</pag>
+		</infNFe>
+		<infNFeSupl>
+			<qrCode><![CDATA[http://homnfce.sefaz.am.gov.br/nfceweb/consultarNFCe.jsp?p=13190507128945000132655030000000301000000051|2|2|1|7EE43E0F0BB89F44DF41C397EDDCC63424296A3A]]></qrCode>
+			<urlChave>http://www.sefaz.am.gov.br/nfce/consulta</urlChave>
+		</infNFeSupl>
+		<Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+			<SignedInfo>
+				<CanonicalizationMethod
+					Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+				<SignatureMethod
+					Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+				<Reference
+					URI="#NFe13190507128945000132655030000000301000000051">
+					<Transforms>
+						<Transform
+							Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+						<Transform
+							Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+					</Transforms>
+					<DigestMethod
+						Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+					<DigestValue>h/yVJTAzili9jopHoNW6N0k+FAU=</DigestValue>
+				</Reference>
+			</SignedInfo>
+			<SignatureValue>lwLlCfZiwoWMXHxeYo+9LVC54RkSYxEaQQWg/y37Mf7/ZFJa1Jb6YfjZGtdmbO+ZxBDTc2QhekkZBytlCtvEyHElhyf3CUIFux74y1pDYS1KpOXszULEqGyNkPBpEKUYtXjJ/pPDxRvGMNiIRZdiP5LKV6N5DzCMhH88V2LeKWT2JTWN4yH086piiO46LLFjmnNkFgUY4i+OAW4prEIIGVuYzubjVD2OdimfIN+WXenyPSsV2CCzA8C0QxFHcW4zK0ohiQfK12sBU7E3hFeNyNitxY2nrXs7RPtVj45BqLp9Z47m7mE3Lu5fCsjjqMBLbAZbiQbpRxjsQckFgbO28g==
+			</SignatureValue>
+			<KeyInfo>
+				<X509Data>
+					<X509Certificate>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
+					</X509Certificate>
+				</X509Data>
+			</KeyInfo>
+		</Signature>
+	</NFe>
+	<protNFe versao="4.00">
+		<infProt>
+			<tpAmb>2</tpAmb>
+			<verAplic>AM3.10-NAC</verAplic>
+			<chNFe>13190507128945000132655030000000301000000051</chNFe>
+			<dhRecbto>2019-05-03T17:48:25-04:00</dhRecbto>
+			<nProt>113190007099806</nProt>
+			<digVal>h/yVJTAzili9jopHoNW6N0k+FAU=</digVal>
+			<cStat>100</cStat>
+			<xMotivo>Autorizado o uso da NF-e</xMotivo>
+		</infProt>
+	</protNFe>
+</nfeProc>

@@ -2,7 +2,7 @@ const { ValidationError, InitError } = require('./lib/exceptions');
 const processor = require('./lib/processor');
 const EventEmitter = require('events');
 
-class Stream extends EventEmitter {
+class PanamahStream extends EventEmitter {
     constructor() {
         super();
         this._onBeforeSave = model => this.emit('before_save', model);
@@ -62,13 +62,13 @@ class Stream extends EventEmitter {
 
     async flush() {
         await processor.flush();
-        processor.off('before_save', this._onBeforeSave);
-        processor.off('before_delete', this._onBeforeDelete);
-        processor.off('error', this._onError);
+        processor.removeListener('before_save', this._onBeforeSave);
+        processor.removeListener('before_delete', this._onBeforeDelete);
+        processor.removeListener('error', this._onError);
         return this;
     }
 }
 
-const stream = new Stream();
+const stream = new PanamahStream();
 
 module.exports = stream;

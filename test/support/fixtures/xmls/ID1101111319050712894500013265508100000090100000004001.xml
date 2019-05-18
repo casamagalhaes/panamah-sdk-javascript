@@ -1,0 +1,18 @@
+<evento xmlns="http://www.portalfiscal.inf.br/nfe" versao="1.00">
+	<infEvento
+		Id="ID1101111319050712894500013265508100000090100000004001">
+		<cOrgao>13</cOrgao>
+		<tpAmb>2</tpAmb>
+		<CNPJ>07128945000132</CNPJ>
+		<chNFe>13190507128945000132655081000000901000000040</chNFe>
+		<dhEvento>2019-05-08T11:05:52-03:00</dhEvento>
+		<tpEvento>110111</tpEvento>
+		<nSeqEvento>1</nSeqEvento>
+		<verEvento>1.00</verEvento>
+		<detEvento versao="1.00">
+			<descEvento>Cancelamento</descEvento>
+			<nProt />
+			<xJust>Desistencia do Cliente</xJust>
+		</detEvento>
+	</infEvento>
+</evento>
