@@ -24,7 +24,7 @@ describe("models", () => {
             const data = fs.readFileSync(path.join(__dirname, '/support/fixtures/models', name));
             return JSON.parse(data.toString());
         }
-        const classNames = Object.keys(models).filter(className => className !== 'PanamahAssinante');
+        const classNames = Object.keys(models).filter(className => !['PanamahAssinante', 'createModelByName'].includes(className));
         await asyncForEach(classNames, async className => {
             const ModelClass = models[className];
             const model = new ModelClass();

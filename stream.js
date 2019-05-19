@@ -75,6 +75,10 @@ class PanamahStream extends EventEmitter {
         return await NFe.readModelsFromDirectory(dirname);
     }
 
+    async getPendingResources() {
+        return await processor.getPendingResources();
+    }
+
     async flush() {
         await processor.flush();
         processor.removeListener('before_save', this._onBeforeSave);
