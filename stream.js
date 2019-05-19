@@ -33,14 +33,14 @@ class PanamahStream extends EventEmitter {
             throw new InitError('AssinanteId é obrigatório.');
     }
 
-    validModel(model) {
+    acceptableModel(model) {
         return !['ASSINANTE'].includes(model.modelName);
     }
 
     save(data) {
         let models = Array.isArray(data) ? data : [data];
         models.forEach(model => {
-            if (this.validModel(model)) {
+            if (this.acceptableModel(model)) {
                 let keepExecuting = true;
                 let preventSave = () => { keepExecuting = false };
                 this.emit('before_save', model, preventSave);
@@ -55,7 +55,7 @@ class PanamahStream extends EventEmitter {
     delete(data) {
         let models = Array.isArray(data) ? data : [data];
         models.forEach(model => {
-            if (this.validModel(model)) {
+            if (this.acceptableModel(model)) {
                 let keepExecuting = true;
                 let preventDelete = () => { keepExecuting = false };
                 this.emit('before_delete', model, preventDelete);
