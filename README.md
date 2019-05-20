@@ -1,3 +1,7 @@
+## Requisitos mínimos
+
+* Node 8
+
 ## Instalação
 
 1. Execute o comando
