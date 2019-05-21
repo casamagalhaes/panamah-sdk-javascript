@@ -25,7 +25,7 @@ describe("models", () => {
             return JSON.parse(data.toString());
         }
         const classNames = Object.keys(models).filter(className => !['PanamahAssinante', 'createModelByName'].includes(className));
-        await asyncForEach(classNames, async className => {
+        await asyncForEach(classNames, async className => {            
             const ModelClass = models[className];
             const model = new ModelClass();
             const fixtureName = `${model.modelName.toLowerCase().split('_').join('-')}.json`;
@@ -34,6 +34,7 @@ describe("models", () => {
                 Stream.init();
                 Stream.save(instance);
                 await Stream.flush();
+                console.log(`${className} enviado.`);
             } catch (e) {
                 console.log('Model:', className);
                 console.error(e, e.stack);
