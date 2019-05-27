@@ -37,7 +37,7 @@ class PanamahStream extends EventEmitter {
         return !['ASSINANTE'].includes(model.modelName);
     }
 
-    save(data) {
+    save(data, assinanteId) {
         let models = Array.isArray(data) ? data : [data];
         models.forEach(model => {
             if (this.acceptableModel(model)) {
@@ -45,14 +45,14 @@ class PanamahStream extends EventEmitter {
                 let preventSave = () => { keepExecuting = false };
                 this.emit('before_save', model, preventSave);
                 if (keepExecuting)
-                    processor.save(model);
+                    processor.save(model, assinanteId);
             }
             else
                 throw new ValidationError(`Impossível salvar modelos do tipo ${model.className} no stream.`);
         });
     }
 
-    delete(data) {
+    delete(data, assinanteId) {
         let models = Array.isArray(data) ? data : [data];
         models.forEach(model => {
             if (this.acceptableModel(model)) {
@@ -60,7 +60,7 @@ class PanamahStream extends EventEmitter {
                 let preventDelete = () => { keepExecuting = false };
                 this.emit('before_delete', model, preventDelete);
                 if (keepExecuting)
-                    processor.delete(model);
+                    processor.delete(model, assinanteId);
             }
             else
                 throw new ValidationError(`Impossível deletar modelos do tipo ${model.className} no stream.`);
@@ -68,7 +68,7 @@ class PanamahStream extends EventEmitter {
     }
 
     async readNFe(filename) {
-        return await NFe.readModelsFromFile(filename);        
+        return await NFe.readModelsFromFile(filename);
     }
 
     async readNFeDirectory(dirname) {
