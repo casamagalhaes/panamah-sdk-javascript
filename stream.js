@@ -13,9 +13,9 @@ class PanamahStream extends EventEmitter {
 
     init(authorizationToken, secret, assinanteId) {
         const credentials = {
-            authorizationToken: process.env.PANAMAH_AUTHORIZATION_TOKEN || authorizationToken,
-            secret: process.env.PANAMAH_SECRET || secret,
-            assinanteId: process.env.PANAMAH_ASSINANTE_ID || assinanteId
+            authorizationToken: authorizationToken || process.env.PANAMAH_AUTHORIZATION_TOKEN,
+            secret: secret || process.env.PANAMAH_SECRET,
+            assinanteId: assinanteId || process.env.PANAMAH_ASSINANTE_ID
         };
         this._validateCredentials(credentials);
         processor.on('before_save', this._onBeforeSave);

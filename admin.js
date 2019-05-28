@@ -4,7 +4,7 @@ const { InitError, AdminError, NotFoundError, ConflictError } = require('./lib/e
 class PanamahAdmin {
     init(authorizationToken) {
         const credentials = {
-            authorizationToken: process.env.PANAMAH_AUTHORIZATION_TOKEN || authorizationToken
+            authorizationToken: authorizationToken || process.env.PANAMAH_AUTHORIZATION_TOKEN
         };
         if (!credentials.authorizationToken)
             throw new InitError('Authorization token é obrigatório.');
