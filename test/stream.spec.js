@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const models = require("../lib/models");
 const { asyncForEach, deleteFolderRecursive } = require("../lib/util");
-const Stream = require("../stream");
+const PanamahStream = require("../stream");
 const expect = require('chai').expect;
 const testServer = require('./support/server');
 
@@ -30,9 +30,9 @@ describe("stream", () => {
             const fixtureName = `${model.modelName.toLowerCase().split('_').join('-')}.json`;
             const instance = new ModelClass(readFixture(fixtureName));
             try {
-                Stream.init();
-                Stream.save(instance);
-                await Stream.flush();
+                PanamahStream.init({ assinanteId: '03992843467' });
+                PanamahStream.save(instance);
+                await PanamahStream.flush();
             } catch (e) {
                 console.log('Model:', className);
                 console.error(e, e.stack);
@@ -62,15 +62,11 @@ describe("stream", () => {
             const fixtureName = `${model.modelName.toLowerCase().split('_').join('-')}.json`;
             const instance = new ModelClass(readFixture(fixtureName));
             try {
-                Stream.init(
-                    process.env.PANAMAH_AUTHORIZATION_TOKEN,
-                    process.env.PANAMAH_SECRET,
-                    '*'
-                );
-                Stream.save(instance, '03992843467');
-                Stream.save(instance, '02541926375');
-                Stream.save(instance, '00934509022');
-                await Stream.flush();
+                PanamahStream.init();
+                PanamahStream.save(instance, '03992843467');
+                PanamahStream.save(instance, '02541926375');
+                PanamahStream.save(instance, '00934509022');
+                await PanamahStream.flush();
             } catch (e) {
                 console.log('Model:', className);
                 console.error(e, e.stack);
@@ -97,13 +93,9 @@ describe("stream", () => {
             { resource: 'LOJA', id: '222', assinanteId: '02541926375' },
             { resource: 'LOJA', id: '6789', assinanteId: '02541926375' },
         ];
-        Stream.init(
-            process.env.PANAMAH_AUTHORIZATION_TOKEN,
-            process.env.PANAMAH_SECRET,
-            '*'
-        );
-        const pendingResources = await Stream.getPendingResources();
-        await Stream.flush();
+        PanamahStream.init();
+        const pendingResources = await PanamahStream.getPendingResources();
+        await PanamahStream.flush();
 
         expect(pendingResources.length).to.be.equal(2);
 
@@ -130,13 +122,9 @@ describe("stream", () => {
             { resource: 'LOJA', id: '222', assinanteId: '02541926375' },
             { resource: 'LOJA', id: '6789', assinanteId: '02541926375' },
         ];
-        Stream.init(
-            process.env.PANAMAH_AUTHORIZATION_TOKEN,
-            process.env.PANAMAH_SECRET,
-            '03992843467'
-        );
-        const pendingResources = await Stream.getPendingResources();
-        await Stream.flush();
+        PanamahStream.init({ assinanteId: '03992843467' });
+        const pendingResources = await PanamahStream.getPendingResources();
+        await PanamahStream.flush();
 
         expect(pendingResources.length).to.be.equal(1);
 

@@ -1,8 +1,25 @@
+/**
+ * @typedef {Object} PanamahAssinante
+ * @property {string} modelName
+ */
 const AdminClient = require('./lib/admin-client');
 const { InitError, AdminError, NotFoundError, ConflictError } = require('./lib/exceptions');
 
+/**
+ * @class
+ * @description API de administração de assinantes do Panamah
+ */
 class PanamahAdmin {
-    init(authorizationToken) {
+
+    /**
+     * @function
+     * @description Inicia a API de administração de assinantes com o token de autorização
+     * @param {Object} opts Opções de inicialização
+     * @param {string} [opts.authorizationToken] Token de autorização (Caso não seja passado, o token é lido da variável de ambiente PANAMAH_AUTHORIZATION_TOKEN)
+     * @example
+     * PanamahStream.init({ authorizationToken: process.env.MY_AUTH_TOKEN });
+     */
+    init({ authorizationToken } = {}) {
         const credentials = {
             authorizationToken: authorizationToken || process.env.PANAMAH_AUTHORIZATION_TOKEN
         };
@@ -11,6 +28,14 @@ class PanamahAdmin {
         this._client = new AdminClient(credentials);
     }
 
+    /**
+     * @function
+     * @description Cria um assinante
+     * @param {PanamahAssinante} assinante Modelo de assinante a ser criado
+     * @throws {PanamahConflictError}
+     * @example
+     * await PanamahAdmin.createAssinante(assinante);
+     */
     async createAssinante(assinante) {
         const { status, data } = await this._client.post('/admin/assinantes', assinante);
         switch (status) {
@@ -21,6 +46,15 @@ class PanamahAdmin {
         }
     }
 
+    /**
+     * @function
+     * @description Busca um assinante pelo id
+     * @param {string} id Id do assinante a ser buscado
+     * @returns {PanamahAdmin}
+     * @throws {PanamahNotFoundError}
+     * @example
+     * const assinante = await PanamahAdmin.getAssinante('123456789');
+     */
     async getAssinante(id) {
         const { status, data } = await this._client.get(`/admin/assinantes/${id}`);
         switch (status) {
@@ -31,6 +65,14 @@ class PanamahAdmin {
         }
     }
 
+    /**
+     * @function
+     * @description Deleta um assinante
+     * @param {string} id Id do assinante a ser deletado
+     * @throws {PanamahNotFoundError}
+     * @example
+     * await PanamahAdmin.deleteAssinante('123456789');
+     */
     async deleteAssinante(id) {
         const { status } = await this._client.delete(`/admin/assinantes/${id}`);
         switch (status) {
