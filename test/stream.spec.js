@@ -5,6 +5,7 @@ const { asyncForEach, deleteFolderRecursive } = require("../lib/util");
 const PanamahStream = require("../stream");
 const expect = require('chai').expect;
 const testServer = require('./support/server');
+const processor = require('../lib/processor');
 
 describe("stream", () => {
     before(done => {
@@ -135,4 +136,40 @@ describe("stream", () => {
         expect(pendingResources[0].models.filter(model => model instanceof models.PanamahSecao).length).to.be.equal(3);
         return;
     });
+
+    it.only("should send data when max time limit has been reached", done => {
+        (async () => {
+            testServer.config.buffer = [];
+            PanamahStream.init();
+            processor._config.batchTTL = 1000;
+            const readFixture = name => {
+                const data = fs.readFileSync(path.join(__dirname, '/support/fixtures/models', name));
+                return JSON.parse(data.toString());
+            }
+            const classNames = ['PanamahProduto', 'PanamahSecao', 'PanamahLoja'];
+            await asyncForEach(classNames, async className => {
+                const ModelClass = models[className];
+                const model = new ModelClass();
+                const fixtureName = `${model.modelName.toLowerCase().split('_').join('-')}.json`;
+                const instance = new ModelClass(readFixture(fixtureName));
+                try {
+                    PanamahStream.save(instance, '03992843467');
+                } catch (e) {
+                    console.log('Model:', className);
+                    console.error(e, e.stack);
+                    throw new Error(e);
+                }
+            });
+            const timeout = setTimeout(() => {
+                throw new Error("Batch não enviado no tempo correto");
+            }, 2100);
+            PanamahStream.on('batch_sent', (batch, status, response) => {
+                clearTimeout(timeout);
+                expect(status).to.be.equal(200);
+                done();
+            });
+        })();
+    });
+
+
 });
