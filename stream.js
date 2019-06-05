@@ -19,6 +19,7 @@ const EventEmitter = require('events');
 class PanamahStream extends EventEmitter {
     constructor() {
         super();
+        this._onBatchSent = (batch, status, response) => this.emit('batch_sent', batch, status, response);
         this._onBeforeSave = (model, assinanteId, preventSave) => this.emit('before_save', model, assinanteId, preventSave);
         this._onBeforeDelete = (model, assinanteId, preventDelete) => this.emit('before_delete', model, assinanteId, preventDelete);
         this._onError = error => this.emit('error', error);
@@ -65,6 +66,7 @@ class PanamahStream extends EventEmitter {
             assinanteId: assinanteId || '*'
         };
         this._validateCredentials(credentials);
+        processor.on('batch_sent', this._onBatchSent);
         processor.on('before_save', this._onBeforeSave);
         processor.on('before_delete', this._onBeforeDelete);
         processor.on('error', this._onError);
@@ -167,6 +169,7 @@ class PanamahStream extends EventEmitter {
      */
     async flush() {
         await processor.flush();
+        processor.removeListener('batch_sent', this._onBatchSent);
         processor.removeListener('before_save', this._onBeforeSave);
         processor.removeListener('before_delete', this._onBeforeDelete);
         processor.removeListener('error', this._onError);
