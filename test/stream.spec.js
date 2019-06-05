@@ -137,7 +137,7 @@ describe("stream", () => {
         return;
     });
 
-    it.only("should send data when max time limit has been reached", done => {
+    it("should send data when max time limit has been reached", done => {
         (async () => {
             testServer.config.buffer = [];
             PanamahStream.init();
