@@ -171,5 +171,37 @@ describe("stream", () => {
         })();
     });
 
+    it("should refresh only once after 403 sending a batch", async () => {
+        testServer.config.tokenExpired = true;
+        const readFixture = name => {
+            const data = fs.readFileSync(path.join(__dirname, '/support/fixtures/models', name));
+            return JSON.parse(data.toString());
+        }
+        const model = new models.PanamahProduto();
+        const fixtureName = `${model.modelName.toLowerCase().split('_').join('-')}.json`;
+        const instance = new models.PanamahProduto(readFixture(fixtureName));
+        try {
+            PanamahStream.init();
+            PanamahStream.on('error', e => {
+                console.log(e, e.stack);
+                throw new Error(e.message || e);
+            });
+            PanamahStream.on('batch_sent', (batch, status, response) => {
+                console.log(batch, status, response);
+            });
+            PanamahStream.save(instance, '03992843467');
+            await Promise.all([
+                processor._process(),
+                PanamahStream.flush()
+            ]);
+            expect(testServer.config.tokenExpired).to.be.equal(false);
+        } catch (e) {
+            console.log('Model:', model.modelName);
+            console.error(e, e.stack);
+            throw new Error(e.message || e);
+        }
+        return;
+    });
+
 
 });
