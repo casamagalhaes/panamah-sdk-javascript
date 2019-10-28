@@ -3,7 +3,7 @@
  * @property {string} modelName
  */
 const AdminClient = require('./lib/admin-client');
-const { InitError, AdminError, NotFoundError, ConflictError } = require('./lib/exceptions');
+const { InitError, AdminError, NotFoundError, ConflictError, ValidationError } = require('./lib/exceptions');
 
 /**
  * @class
@@ -41,6 +41,7 @@ class PanamahAdmin {
         switch (status) {
             case 201: return data;
             case 409: throw new ConflictError('Assinante já existe.');
+            case 422: throw new ValidationError(JSON.stringify(data));
             default:
                 throw new AdminError(`Erro ${status} ao criar assinante.`);
         }
