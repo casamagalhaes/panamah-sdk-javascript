@@ -142,6 +142,8 @@ describe("stream", () => {
             testServer.config.buffer = [];
             PanamahStream.init();
             processor._config.batchTTL = 1000;
+            processor._config.batchMaxCount = 1000;
+            processor._config.batchMaxSize = 10 * 1024;
             const readFixture = name => {
                 const data = fs.readFileSync(path.join(__dirname, '/support/fixtures/models', name));
                 return JSON.parse(data.toString());
@@ -163,7 +165,7 @@ describe("stream", () => {
             const timeout = setTimeout(() => {
                 throw new Error("Batch não enviado no tempo correto");
             }, 2100);
-            PanamahStream.on('batch_sent', (batch, status, response) => {
+            PanamahStream.once('batch_sent', (batch, status, response) => {
                 clearTimeout(timeout);
                 expect(status).to.be.equal(200);
                 done();
@@ -187,7 +189,7 @@ describe("stream", () => {
                 throw new Error(e.message || e);
             });
             PanamahStream.on('batch_sent', (batch, status, response) => {
-                console.log(batch, status, response);
+                // console.log(batch, status, response);
             });
             PanamahStream.save(instance, '03992843467');
             await Promise.all([
