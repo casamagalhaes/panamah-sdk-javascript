@@ -1,6 +1,6 @@
 {
   "name": "panamah-sdk-javascript",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "javascript implementation of panamah standard developer kit",
   "main": "index.js",
   "directories": {
