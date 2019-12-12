@@ -465,6 +465,18 @@
                         "required": true
                     }
                 }
+            },
+            "eans": {
+                "type": "list[object]",
+                "fields": {
+                    "id": {
+                        "type": "string",
+                        "required": true
+                    },
+                    "tributado": {
+                        "type": "boolean"
+                    }
+                }
             }
         }
     },
