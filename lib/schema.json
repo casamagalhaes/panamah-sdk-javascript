@@ -266,7 +266,9 @@
             },
             "valor": {
                 "type": "number",
-                "required": true
+                "required": true,
+                "maxValue": 999999999.99,
+                "minValue": -999999999.99
             }
         }
     },
@@ -407,13 +409,17 @@
                             },
                             "quantidade": {
                                 "type": "number",
-                                "required": true
+                                "required": true,
+                                "maxValue": 999999999.9999,
+                                "minValue": -999999999.9999
                             }
                         }
                     },
                     "quantidade": {
                         "type": "number",
-                        "required": true
+                        "required": true,
+                        "maxValue": 999999999.9999,
+                        "minValue": -999999999.9999
                     }
                 }
             },
@@ -532,10 +538,14 @@
             },
             "valor": {
                 "type": "number",
-                "required": true
+                "required": true,
+                "maxValue": 999999999.99,
+                "minValue": -999999999.99
             },
             "valorContraValeOuTroco": {
-                "type": "number"
+                "type": "number",
+                "maxValue": 999999999.99,
+                "minValue": -999999999.99
             }
         }
     },
@@ -567,15 +577,21 @@
                     },
                     "quantidade": {
                         "type": "number",
-                        "required": true
+                        "required": true,
+                        "maxValue": 999999999.9999,
+                        "minValue": -999999999.9999
                     },
                     "valorTotal": {
                         "type": "number",
-                        "required": true
+                        "required": true,
+                        "maxValue": 999999999.99,
+                        "minValue": -999999999.99
                     },
                     "valorUnitario": {
                         "type": "number",
-                        "required": true
+                        "required": true,
+                        "maxValue": 999999999.99,
+                        "minValue": -999999999.99
                     },
                     "vendedorId": {
                         "type": "string"
@@ -598,7 +614,9 @@
             },
             "valor": {
                 "type": "number",
-                "required": true
+                "required": true,
+                "maxValue": 999999999.99,
+                "minValue": -999999999.99
             },
             "vendedorId": {
                 "type": "string"
@@ -645,7 +663,9 @@
                     },
                     "valor": {
                         "type": "number",
-                        "required": true
+                        "required": true,
+                        "maxValue": 999999999.99,
+                        "minValue": -999999999.99
                     }
                 }
             }
@@ -711,10 +731,14 @@
             },
             "valor": {
                 "type": "number",
-                "required": true
+                "required": true,
+                "maxValue": 999999999.99,
+                "minValue": -999999999.99
             },
             "valorItensCancelados": {
-                "type": "number"
+                "type": "number",
+                "maxValue": 999999999.99,
+                "minValue": -999999999.99
             },
             "acrescimo": {
                 "type": "number"
@@ -754,18 +778,24 @@
                     },
                     "quantidade": {
                         "type": "number",
-                        "required": true
+                        "required": true,
+                        "maxValue": 999999999.9999,
+                        "minValue": -999999999.9999
                     },
                     "servico": {
                         "type": "number"
                     },
                     "valorTotal": {
                         "type": "number",
-                        "required": true
+                        "required": true,
+                        "maxValue": 999999999.99,
+                        "minValue": -999999999.99
                     },
                     "valorUnitario": {
                         "type": "number",
-                        "required": true
+                        "required": true,
+                        "maxValue": 999999999.99,
+                        "minValue": -999999999.99
                     },
                     "tipoPreco": {
                         "type": "string",
@@ -796,7 +826,9 @@
                     },
                     "valor": {
                         "type": "number",
-                        "required": true
+                        "required": true,
+                        "maxValue": 999999999.99,
+                        "minValue": -999999999.99
                     }
                 },
                 "required": true
@@ -847,7 +879,9 @@
             },
             "valor": {
                 "type": "number",
-                "required": true
+                "required": true,
+                "maxValue": 999999999.99,
+                "minValue": -999999999.99
             },
             "acrescimo": {
                 "type": "number"
@@ -867,15 +901,21 @@
                     },
                     "quantidade": {
                         "type": "number",
-                        "required": true
+                        "required": true,
+                        "maxValue": 999999999.9999,
+                        "minValue": -999999999.9999
                     },
                     "valorTotal": {
                         "type": "number",
-                        "required": true
+                        "required": true,
+                        "maxValue": 999999999.99,
+                        "minValue": -999999999.99
                     },
                     "valorUnitario": {
                         "type": "number",
-                        "required": true
+                        "required": true,
+                        "maxValue": 999999999.99,
+                        "minValue": -999999999.99
                     }
                 },
                 "required": true
@@ -922,7 +962,9 @@
             },
             "quantidade": {
                 "type": "number",
-                "required": true
+                "required": true,
+                "maxValue": 999999999.9999,
+                "minValue": -999999999.9999
             },
             "custo": {
                 "type": "number",
@@ -957,23 +999,33 @@
             },
             "valorNominal": {
                 "type": "number",
-                "required": true
+                "required": true,
+                "maxValue": 999999999.99,
+                "minValue": -999999999.99
             },
             "valorJuros": {
                 "type": "number",
-                "required": true
+                "required": true,
+                "maxValue": 999999999.99,
+                "minValue": -999999999.99
             },
             "valorMulta": {
                 "type": "number",
-                "required": true
+                "required": true,
+                "maxValue": 999999999.99,
+                "minValue": -999999999.99
             },
             "valorDevido": {
                 "type": "number",
-                "required": true
+                "required": true,
+                "maxValue": 999999999.99,
+                "minValue": -999999999.99
             },
             "valorPago": {
                 "type": "number",
-                "required": true
+                "required": true,
+                "maxValue": 999999999.99,
+                "minValue": -999999999.99
             },
             "dataEmissao": {
                 "type": "date",
@@ -992,7 +1044,9 @@
                     },
                     "valor": {
                         "type": "number",
-                        "required": true
+                        "required": true,
+                        "maxValue": 999999999.99,
+                        "minValue": -999999999.99
                     }
                 },
                 "required": true
@@ -1019,23 +1073,33 @@
             },
             "valorNominal": {
                 "type": "number",
-                "required": true
+                "required": true,
+                "maxValue": 999999999.99,
+                "minValue": -999999999.99
             },
             "valorJuros": {
                 "type": "number",
-                "required": true
+                "required": true,
+                "maxValue": 999999999.99,
+                "minValue": -999999999.99
             },
             "valorMulta": {
                 "type": "number",
-                "required": true
+                "required": true,
+                "maxValue": 999999999.99,
+                "minValue": -999999999.99
             },
             "valorDevido": {
                 "type": "number",
-                "required": true
+                "required": true,
+                "maxValue": 999999999.99,
+                "minValue": -999999999.99
             },
             "valorPago": {
                 "type": "number",
-                "required": true
+                "required": true,
+                "maxValue": 999999999.99,
+                "minValue": -999999999.99
             },
             "dataEmissao": {
                 "type": "date",
@@ -1054,7 +1118,9 @@
                     },
                     "valor": {
                         "type": "number",
-                        "required": true
+                        "required": true,
+                        "maxValue": 999999999.99,
+                        "minValue": -999999999.99
                     }
                 },
                 "required": true
