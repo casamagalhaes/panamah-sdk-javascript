@@ -64,6 +64,10 @@
             "ativo": {
                 "type": "boolean",
                 "required": true
+            },
+            "oficial": {
+                "type": "boolean",
+                "required": true
             }
         }
     },
