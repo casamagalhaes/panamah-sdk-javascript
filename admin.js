@@ -49,6 +49,24 @@ class PanamahAdmin {
 
     /**
      * @function
+     * @description Altera um assinante
+     * @param {PanamahAssinante} assinante Modelo de assinante a ser alterado
+     * @throws {ValidationError}
+     * @example
+     * await PanamahAdmin.updateAssinante(assinante);
+     */
+    async updateAssinante(assinante) {
+        const { status, data } = await this._client.put(`/admin/assinantes/${assinante.id}`, assinante);
+        switch (status) {
+            case 200: return data;
+            case 422: throw new ValidationError(JSON.stringify(data));
+            default:
+                throw new AdminError(`Erro ${status} ao alterar um assinante.`);
+        }
+    }
+
+    /**
+     * @function
      * @description Busca um assinante pelo id
      * @param {string} id Id do assinante a ser buscado
      * @returns {PanamahAdmin}
