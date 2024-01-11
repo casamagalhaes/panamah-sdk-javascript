@@ -13,7 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^1.6.5",
     "lodash.camelcase": "^4.3.0",
     "lodash.flatten": "^4.4.0",
     "lodash.result": "^4.5.2",
